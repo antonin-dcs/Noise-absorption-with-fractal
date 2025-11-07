@@ -15,30 +15,30 @@ Railway noise is a major urban pollution issue, particularly in the Paris region
 ### 1. Acoustic Wave Propagation
 
 The acoustic pressure field $u(y,w)$ satisfies the **Helmholtz equation** on the propagation domain $\Omega$
-$$ 
+$
 \Delta u + k^2u
-$$ 
+$
 
 where:
-- $$k = ω/c$$ is the wave number (ω: angular frequency, c: sound speed ≈ 340 m/s)
+- $ k = ω/c $ is the wave number (ω: angular frequency, c: sound speed ≈ 340 m/s)
 - Robin condition modelise the worst situation : a reflexive tunnel 
 
 ### 2. Boundary Conditions
 
 - **Porous material (absorbing)**: Robin boundary condition on $\partial \Omega$
-  $$
+  $
   ∂u/∂n + \alpha\chi\u = 0
-  $$
+  $
 
 - **Rigid barrier (reflecting)**: Neumann condition on  $\partial \Omega_{Neumann}$
-$$
+$
 ∂p/∂n = 0 
-$$
+$
 
 - **Rigid barrier (reflecting)**: Dirichlet condition on $∂\Omega_{Dirichlet}$
-  $$
+  $
   u = g 
-  $$
+  $
 
 
 ### 3. Noise Source Model
@@ -54,9 +54,72 @@ The situation is resumed in the figure below
 </p>
 
 
-## Organisation du git
-**compute_alpha.py**: Identifies the optimal acoustic parameter α(ω) using BFGS to
-minimize the discrepancy between experimental material behavior and the simplified
-model for each frequency.
+### Results
 
-**postprocessing.py**: Plots and visualizes optimization results.
+We determine the optimal spatial distribution of χ by minimizing the acoustic energy through a gradient descent algorithm. The optimization iteratively updates χ to reduce the radiated energy, leading to a material configuration that achieves significantly improved noise attenuation. The resulting optimized χ distribution and the corresponding energy reduction are illustrated in the figures below.
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deux images côte à côte</title>
+  <style>
+    /* Conteneur principal */
+    .side-by-side {
+      display: flex;
+      gap: 1rem;              /* espace entre les images */
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;        /* passe en colonne sur petits écrans */
+      margin: 1rem;
+    }
+
+    /* Chaque figure (image + légende) */
+    .figure {
+      flex: 1 1 320px;        /* grow, shrink, base width */
+      max-width: 48%;         /* deux colonnes sur écrans larges */
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Image : pleine largeur du bloc figure, conserve ratio */
+    .figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    /* Légende */
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* Sur petits écrans, chaque figure prend toute la largeur */
+    @media (max-width: 700px) {
+      .figure {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="side-by-side">
+    <figure class="figure">
+      <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution after optimization">
+      <figcaption class="caption">χ distribution — before optimization</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="fig_u0_re_plot.jpg" alt="Accoustical energy after optimization">
+      <figcaption class="caption">χ distribution — after optimization</figcaption>
+    </figure>
+  </div>
+
+</body>
+</html>
