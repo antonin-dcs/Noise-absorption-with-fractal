@@ -58,13 +58,22 @@ The situation is resumed in the figure below
 
 We determine the optimal spatial distribution of χ by minimizing the acoustic energy through a gradient descent algorithm. The optimization iteratively updates χ to reduce the radiated energy, leading to a material configuration that achieves significantly improved noise attenuation. The resulting optimized χ distribution and the corresponding energy reduction are illustrated in the figures below.
 
-<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
-  <div style="flex: 1 1 320px; max-width: 48%; text-align: center;">
-    <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution after optimization" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
-    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">χ distribution — before optimization</div>
+<div style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
+
+  <div style="text-align: center;">
+    <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution before optimization"
+         style="width: 350px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
+    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">
+      χ distribution — before optimization
+    </div>
   </div>
-  <div style="flex: 1 1 320px; max-width: 48%; text-align: center;">
-    <img src="fig_u0_re_plot.jpg" alt="Accoustical energy after optimization" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
-    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">χ distribution — after optimization</div>
+
+  <div style="text-align: center;">
+    <img src="fig_u0_re_plot.jpg" alt="Acoustical energy after optimization"
+         style="width: 350px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
+    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">
+      χ distribution — after optimization
+    </div>
   </div>
+
 </div>
