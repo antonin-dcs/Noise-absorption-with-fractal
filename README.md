@@ -48,4 +48,6 @@ $$
 g(y) = (10 / √(2π)σ) × exp(-y² / 2σ²)
 $$
 
-![Capture d'écran principale](./images/initial_model.png)
+<p align="center">
+  <img src="./images/initial_model.png" width="400">
+</p>
