@@ -61,10 +61,10 @@ We determine the optimal spatial distribution of χ by minimizing the acoustic e
 <div style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
 
   <div style="text-align: center;">
-    <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution before optimization"
+    <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution after optimization"
          style="width: 350px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
     <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">
-      χ distribution — before optimization
+      χ distribution after optimization
     </div>
   </div>
 
@@ -72,7 +72,7 @@ We determine the optimal spatial distribution of χ by minimizing the acoustic e
     <img src="fig_u0_re_plot.jpg" alt="Acoustical energy after optimization"
          style="width: 350px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
     <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">
-      χ distribution — after optimization
+      Acoustical energy after optimization
     </div>
   </div>
 
