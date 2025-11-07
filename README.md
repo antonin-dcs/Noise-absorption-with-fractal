@@ -58,68 +58,13 @@ The situation is resumed in the figure below
 
 We determine the optimal spatial distribution of χ by minimizing the acoustic energy through a gradient descent algorithm. The optimization iteratively updates χ to reduce the radiated energy, leading to a material configuration that achieves significantly improved noise attenuation. The resulting optimized χ distribution and the corresponding energy reduction are illustrated in the figures below.
 
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deux images côte à côte</title>
-  <style>
-    /* Conteneur principal */
-    .side-by-side {
-      display: flex;
-      gap: 1rem;              /* espace entre les images */
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;        /* passe en colonne sur petits écrans */
-      margin: 1rem;
-    }
-
-    /* Chaque figure (image + légende) */
-    .figure {
-      flex: 1 1 320px;        /* grow, shrink, base width */
-      max-width: 48%;         /* deux colonnes sur écrans larges */
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    /* Image : pleine largeur du bloc figure, conserve ratio */
-    .figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    }
-
-    /* Légende */
-    .caption {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: #333;
-    }
-
-    /* Sur petits écrans, chaque figure prend toute la largeur */
-    @media (max-width: 700px) {
-      .figure {
-        max-width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="side-by-side">
-    <figure class="figure">
-      <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution after optimization">
-      <figcaption class="caption">χ distribution — before optimization</figcaption>
-    </figure>
-
-    <figure class="figure">
-      <img src="fig_u0_re_plot.jpg" alt="Accoustical energy after optimization">
-      <figcaption class="caption">χ distribution — after optimization</figcaption>
-    </figure>
+<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: flex-start;">
+  <div style="flex: 1 1 320px; max-width: 48%; text-align: center;">
+    <img src="fig_chibinary_re_plot.jpg" alt="Chi distribution after optimization" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
+    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">χ distribution — before optimization</div>
   </div>
-
-</body>
-</html>
+  <div style="flex: 1 1 320px; max-width: 48%; text-align: center;">
+    <img src="fig_u0_re_plot.jpg" alt="Accoustical energy after optimization" style="width: 100%; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);">
+    <div style="margin-top: 0.5rem; font-size: 0.95rem; color: #333;">χ distribution — after optimization</div>
+  </div>
+</div>
