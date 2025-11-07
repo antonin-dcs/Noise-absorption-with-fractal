@@ -14,9 +14,10 @@ Railway noise is a major urban pollution issue, particularly in the Paris region
 
 ### 1. Acoustic Wave Propagation
 
-The acoustic pressure field $u(y,w)$ satisfies the **Helmholtz equation** with Robin condition on the boundary :
-
-$$ \Delta u + k^2u $$ in Ω (propagation domain)
+The acoustic pressure field $u(y,w)$ satisfies the **Helmholtz equation** on the propagation domain $\Omega$
+$$ 
+\Delta u + k^2u
+$$ 
 
 where:
 - $$k = ω/c$$ is the wave number (ω: angular frequency, c: sound speed ≈ 340 m/s)
@@ -47,7 +48,15 @@ The railway noise source is modeled as a Gaussian distribution centered at the w
 $$
 g(y) = (10 / √(2π)σ) × exp(-y² / 2σ²)
 $$
-
+The situation is resumed in the figure below
 <p align="center">
   <img src="./images/initial_model.png" width="400">
 </p>
+
+
+## Organisation du git
+**compute_alpha.py**: Identifies the optimal acoustic parameter α(ω) using BFGS to
+minimize the discrepancy between experimental material behavior and the simplified
+model for each frequency.
+
+**postprocessing.py**: Plots and visualizes optimization results.
