@@ -26,27 +26,27 @@ where:
 ### 2. Boundary Conditions
 
 - **Porous material (absorbing)**: Robin boundary condition on $\partial \Omega$
-  $$
+  $
   \frac{\partial u}{\partial n} + \alpha\chi u = 0
-  $$
+  $
 
 - **Rigid barrier (reflecting)**: Neumann condition on $\partial \Omega_{\text{Neumann}}$
-  $$
+  $
   \frac{\partial p}{\partial n} = 0 
-  $$
+  $
 
 - **Source boundary**: Dirichlet condition on $\partial\Omega_{\text{Dirichlet}}$
-  $$
+  $
   u = g 
-  $$
+  $
 
 ### 3. Noise Source Model
 
 The railway noise source is modeled as a Gaussian distribution centered at the wheel-rail contact point:
 
-$$
+$
 g(y) = (10 / √(2π)σ) × exp(-y² / 2σ²)
-$$
+$
 The situation is resumed in the figure below
 <p align="center">
   <img src="figures/initial_model.png" width="400">
