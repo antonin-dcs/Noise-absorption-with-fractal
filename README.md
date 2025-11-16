@@ -25,17 +25,20 @@ where:
 
 ### 2. Boundary Conditions
 
-**Porous material (absorbing)**: Robin boundary condition on $\partial \Omega$
+**Porous material (absorbing)**: Robin boundary condition on $\partial \Omega$ :
+
 $$
 \frac{\partial u}{\partial n} + \alpha\chi u = 0
 $$
 
-**Rigid barrier (reflecting)**: Neumann condition on $\partial \Omega_{\text{Neumann}}$
+**Rigid barrier (reflecting)**: Neumann condition on $\partial \Omega_{\text{Neumann}}$ :
+
 $$
 \frac{\partial p}{\partial n} = 0 
 $$
 
-**Source boundary**: Dirichlet condition on $\partial\Omega_{\text{Dirichlet}}$
+**Source boundary**: Dirichlet condition on $\partial\Omega_{\text{Dirichlet}}$ :
+
 $$
 u = g 
 $$
