@@ -5,10 +5,14 @@ postprocessing.py
 This module handles the visualization of the optimization results.
 """
 
+# -*- coding: utf-8 -*-
+
+
 # Python packages
 import matplotlib.pyplot
 import numpy
 import os
+import math
 
 
 # MRG packages
@@ -105,6 +109,16 @@ def _plot_controled_solution(u, chi):
     # matplotlib.pyplot.show()
 
     return
+
+def plot_module(u, chi):
+    module = numpy.sqrt(numpy.real(u)**2 + numpy.imag(u)**2)
+    myimshow(module, title='$|u_{0}|$ in $\Omega$', colorbar='colorbar', cmap='jet', vmin=-1, vmax=1, filename='fig_u0_module.jpg')
+
+def plot_module_controled(u, chi):
+    module = numpy.sqrt(numpy.real(u)**2 + numpy.imag(u)**2)
+    myimshow(module, title='$|u_{n}|$ in $\Omega$', colorbar='colorbar', cmap='jet', vmin=-1, vmax=1, filename='fig_un_module.jpg')
+
+
 def _plot_controled_binary_solution(u, chibinary):
 #def _plot_controled_solution(x_plot, y_plot, x, y, u, chi):
 

@@ -7,6 +7,16 @@ import matplotlib.pyplot
 import numpy
 import os
 
+# -*- coding: utf-8 -*-
+
+
+# Python packages
+import matplotlib.pyplot
+import numpy
+import os
+from processing import is_on_robin_boundary
+#from gradient_descent import BelongsInteriorDomain
+
 
 # MRG packages
 import _env
@@ -110,7 +120,7 @@ def _set_chi(M, N, x, y):
         chi[int(y[k]), int(x[k])] = val
     return chi
 """
-def _set_chi(M, N, x, y,beta):
+def _set_chi(M, N, x, y, beta):
     chi = numpy.zeros((M, N), dtype=numpy.float64)
     k_begin = int((len(x) - 1)*(1-beta)/2)
     k_end = int((len(x) - 1) *(1+beta)/2)
@@ -121,9 +131,7 @@ def _set_chi(M, N, x, y,beta):
 
 
 
-import numpy as np
-
-def set_chi_partitioned(M, N, x, y, K=3,param=5):
+def _set_chi_partitioned(M, N, x, y, K=3,param=5):
     """
     Crée une matrice chi initiale en divisant le domaine en K parties
     pour mieux répartir les valeurs sur le domaine de Robin.
@@ -140,7 +148,7 @@ def set_chi_partitioned(M, N, x, y, K=3,param=5):
         chi : ndarray (MxN)
             Matrice initiale chi.
     """
-    chi = np.zeros((M, N), dtype=np.float64)
+    chi = numpy.zeros((M, N), dtype=numpy.float64)
     n_points = len(x)
     val = 1.0
 
@@ -157,8 +165,6 @@ def set_chi_partitioned(M, N, x, y, K=3,param=5):
 
     return chi
 
-
-import numpy as np
 
 def create_motif_koch(A, B):
     """
@@ -465,4 +471,5 @@ def surlignefractale(domain, color_domain, color_seed):
                     domain[i, j] = color_seed
 
     return domain
+
 
