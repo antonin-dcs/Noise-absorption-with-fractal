@@ -13,33 +13,32 @@ Railway noise is a major urban pollution issue, particularly in the Paris region
 ## Mathematical Model
 
 ### 1. Acoustic Wave Propagation
+The acoustic pressure field $u(y,\omega)$ satisfies the **Helmholtz equation** on the propagation domain $\Omega$:
 
-The acoustic pressure field $u(y,w)$ satisfies the **Helmholtz equation** on the propagation domain $\Omega$
-$
-\Delta u + k^2u
-$
+$$
+\Delta u + k^2 u = 0
+$$
 
 where:
-- $ k = ω/c $ is the wave number (ω: angular frequency, c: sound speed ≈ 340 m/s)
-- Robin condition modelise the worst situation : a reflexive tunnel 
+- $k = \omega/c$ is the wave number ($\omega$: angular frequency, $c$: sound speed ≈ 340 m/s)
+- Robin condition models the worst situation: a reflective tunnel 
 
 ### 2. Boundary Conditions
 
 - **Porous material (absorbing)**: Robin boundary condition on $\partial \Omega$
-  $
-  ∂u/∂n + \alpha\chi\u = 0
-  $
+  $$
+  \frac{\partial u}{\partial n} + \alpha\chi u = 0
+  $$
 
-- **Rigid barrier (reflecting)**: Neumann condition on  $\partial \Omega_{Neumann}$
-$
-∂p/∂n = 0 
-$
+- **Rigid barrier (reflecting)**: Neumann condition on $\partial \Omega_{\text{Neumann}}$
+  $$
+  \frac{\partial p}{\partial n} = 0 
+  $$
 
-- **Rigid barrier (reflecting)**: Dirichlet condition on $∂\Omega_{Dirichlet}$
-  $
+- **Source boundary**: Dirichlet condition on $\partial\Omega_{\text{Dirichlet}}$
+  $$
   u = g 
-  $
-
+  $$
 
 ### 3. Noise Source Model
 
@@ -50,7 +49,7 @@ g(y) = (10 / √(2π)σ) × exp(-y² / 2σ²)
 $$
 The situation is resumed in the figure below
 <p align="center">
-  <img src="./images/initial_model.png" width="400">
+  <img src="figures/initial_model.png" width="400">
 </p>
 
 
@@ -80,3 +79,6 @@ We determine the optimal spatial distribution of χ by minimizing the acoustic e
     </td>
   </tr>
 </table
+
+
+The `src/` directory contains the optimization implementation files, and `figures/` contains the visualization results.
